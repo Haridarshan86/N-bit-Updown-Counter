@@ -8,40 +8,6 @@ This project implements a **4-bit Synchronous Up/Down Counter** using **Verilog 
 - `up_down = 0` → Counter counts downward.
 - `reset = 1` → Counter resets to zero.
 
-The design is verified using a testbench and simulated in Vivado.
-
----
-
-## 🎯 Objective
-
-- Design a 4-bit synchronous Up/Down Counter.
-- Implement the design using Verilog HDL.
-- Simulate and verify the functionality.
-- Understand sequential logic and counter operations.
-
----
-
-## 🛠️ Tools Used
-
-- Verilog HDL
-- Xilinx Vivado
-- GitHub
-
----
-
-## 📂 Project Structure
-
-```text
-4-Bit-UpDown-Counter/
-│
-├── updowncounter.v
-├── updowncounter_tb.v
-├── screenshots/
-│   └── waveform.png
-└── README.md
-```
-
----
 
 ## 📋 Module Description
 
@@ -87,46 +53,6 @@ When `up_down = 0`, the counter decrements on every rising edge of the clock.
 count <= count - 1;
 ```
 
----
-
-## 💻 Verilog Design Code
-
-```verilog
-module updowncounter(
-    input clk,
-    input reset,
-    input up_down,
-    output reg [3:0] count
-);
-
-always @(posedge clk or posedge reset)
-begin
-    if (reset)
-        count <= 4'b0000;
-    else if (up_down)
-        count <= count + 1;
-    else
-        count <= count - 1;
-end
-
-endmodule
-```
-
----
-
-## 🧪 Testbench
-
-The testbench performs:
-
-- Clock generation
-- Reset verification
-- Up-count verification
-- Down-count verification
-- Simulation monitoring
-
----
-
-## 📈 Expected Output
 
 ### Up Counter Mode
 
@@ -159,53 +85,13 @@ The testbench performs:
 
 ## 📸 Simulation Waveform
 
-Add your waveform screenshot in the `screenshots` folder and update the path below:
-
-```markdown
-![Waveform](screenshots/waveform.png)
-```
+<img width="1626" height="857" alt="image" src="https://github.com/user-attachments/assets/732cff39-68a2-4f6d-b904-94cd699e247f" />
 
 ---
 
 ## 🔍 Truth Table
+<img width="1208" height="527" alt="image" src="https://github.com/user-attachments/assets/1500c059-dca9-4b5f-bdac-34030be2a572" />
 
-| Reset | Up_Down | Counter Operation |
-|--------|----------|------------------|
-| 1 | X | Reset to 0000 |
-| 0 | 1 | Count Up |
-| 0 | 0 | Count Down |
-
----
-
-## 🚀 Applications
-
-- Digital Clocks
-- Event Counters
-- Frequency Counters
-- FPGA-Based Systems
-- Embedded Applications
-- Digital Control Systems
-
----
-
-## 📚 Learning Outcomes
-
-- Understanding sequential circuits
-- Designing synchronous counters
-- Verilog behavioral modeling
-- Writing and debugging testbenches
-- FPGA design workflow
-
----
-
-## 👨‍💻 Author
-
-**Haridarshan B Kunder**
-
-Electronics & Communication Engineering  
-NMAM Institute of Technology, Nitte
-
-GitHub: https://github.com/Haridarshan86
 
 ---
 
